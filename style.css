@@ -1,0 +1,62 @@
+footer {
+    text-align: center;
+}
+.btn-danger {
+    margin-top: 1.1%;
+    }
+@media (max-width: 860px){
+		h2{
+			text-align: center;
+			font-size: 2em;
+		}
+		input{
+			width:70% !important;
+		}
+	}
+
+
+	body{
+		margin-left: 5%;
+	}
+
+	button{
+		margin-bottom: 1%;
+	}
+
+	.color{
+		text-align: center;
+		margin-bottom: 1em;
+	}
+
+	* { 
+		font-family:Lato; 
+	}
+
+	a { 
+		color:#999;
+		text-decoration: none;
+	}
+
+	a:hover { 
+		color:#802727; 
+	}
+
+	#AddMoreFileId{
+		margin-top: 1%;
+		margin-left: 10%
+	}
+
+	.removeclass{
+		font-size: 30px
+	}
+
+	input { 
+		padding:5px; 
+		border:1px solid #999;
+		border-radius:4px;
+		-moz-border-radius:4px;
+		-web-kit-border-radius:4px;
+		khtml-border-radius:4px;
+		width: 80%;
+		margin-left: 10%
+	}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Lista zakupów</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+
+	<div class="color">
+	  <h2>Zmień kolor kartki</h2>
+	  <button type="button"  class="btn btn-primary" onclick="changeBodyBg('#3F69AA');">Niebieski</button>
+	  <button type="button"  class="btn btn-primary" onclick="changeBodyBg('#6B5B95');">Fioletowy</button>
+	  <button type="button"  class="btn btn-primary" onclick="changeBodyBg('#D5AE41');">Żółty</button>
+	  <button type="button"  class="btn btn-primary" onclick="changeBodyBg('#00A591');">Zielony</button>
+	  <button type="button"  class="btn btn-primary" onclick="changeBodyBg('#EADEDB');">Szary</button><br>
+  	</div>
+  	<script type="text/javascript">
+
+	var name;
+	name = prompt("Jak mam się do Ciebie zwracać?")
+	document.write("Dodaj swoje produkty "+name);
+
+	function changeBodyBg(color){
+        document.body.style.background = color;
+    }
+
+  </script>
+
+	<div id="InputsWrapper">
+		<div>
+			<input type="text" name="mytext[]" id="field_1" value="">
+				<a href="#" class="removeclass"></a>
+	</div>
+
+	</div>
+	<div id="AddMoreFileId">
+		<a href="#" id="AddMoreFileBox" class="btn btn-info">Dodaj</a><br><br>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+  	$(document).ready(function() {
+
+var MaxInputs       = 30; //maximum extra input boxes allowed
+var InputsWrapper   = $("#InputsWrapper"); //Input boxes wrapper ID
+var AddButton       = $("#AddMoreFileBox"); //Add button ID
+
+var x = InputsWrapper.length; //initlal text box count
+var FieldCount=1; //to keep track of text box added
+
+$(AddButton).click(function (e) {
+        //max input box allowed
+        if(x <= MaxInputs) {
+            FieldCount++; //text box added ncrement
+            //add input box
+            $(InputsWrapper).append('<div><input type="text" name="mytext[]" id="field_'+ FieldCount +'"/> <a href="#" class="removeclass"><button type="button" class = "btn btn-danger">Usuń</button></a></div>');
+            x++; //text box increment
+            
+            $("#AddMoreFileId").show();
+            
+            $('AddMoreFileBox').html("Add field");
+            
+
+            if(x == 30) {
+                $("#AddMoreFileId").hide();
+             	$("#lineBreak").html("<br>");
+            }
+        }
+        return false;
+});
+
+$("body").on("click",".removeclass", function(e){ //user click on remove text
+        if( x > 1 ) {
+                $(this).parent('div').remove(); //remove text box
+                x--; //decrement textbox
+            
+            	$("#AddMoreFileId").show();
+            
+            	$("#lineBreak").html("");
+            
+                // Adds the "add" link again when a field is removed.
+                $('AddMoreFileBox').html("Add field");
+        }
+	return false;
+}) 
+
+});
+  </script>
+<br>
+<br>
+<footer>
+	<p>Wykonanie:<a href="http://sebast1ang.github.io"> Sebastian Garas</a></p>
+</footer>
+</body>
+</html>
